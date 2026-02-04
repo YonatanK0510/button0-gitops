@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: button0-frontend
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:YonatanK0510/button0.git
+    targetRevision: master
+    path: helm/frontend
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: button0
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
