@@ -9,6 +9,9 @@ spec:
     repoURL: https://github.com/YonatanK0510/button0.git
     targetRevision: master
     path: helm/frontend
+    helm:
+      valueFiles:
+        - environments/dev/values/frontend.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: button0

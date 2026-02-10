@@ -1,0 +1,17 @@
+ingress:
+  enabled: true
+  className: alb
+
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-central-1:186582695522:certificate/2534f2ef-c25b-43b8-bb58-486d633f4551
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
+    alb.ingress.kubernetes.io/load-balancer-attributes: routing.http.drop_invalid_header_fields.enabled=true
+
+  hosts:
+    - host: dev.yk-loh7.online
+      paths:
+        - path: /
+          pathType: Prefix
