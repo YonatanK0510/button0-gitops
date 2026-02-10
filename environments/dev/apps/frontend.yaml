@@ -11,6 +11,11 @@ spec:
     path: helm/frontend
     helm:
       values: |
+        backend:
+          service:
+            name: button0-backend
+            port: 8000
+
         ingress:
           enabled: true
           className: alb
@@ -23,6 +28,8 @@ spec:
           hosts:
             - host: dev.yk-loh7.online
               paths:
+                - path: /api
+                  pathType: Prefix
                 - path: /
                   pathType: Prefix
   destination:
