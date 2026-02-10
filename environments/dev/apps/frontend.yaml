@@ -33,15 +33,13 @@ spec:
                   backend:
                     service:
                       name: button0-backend
-                      port:
-                        number: 8000
+                      port: 8000
                 - path: /
                   pathType: Prefix
                   backend:
                     service:
                       name: button0-frontend
-                      port:
-                        number: 80
+                      port: 80
   destination:
     server: https://kubernetes.default.svc
     namespace: button0
