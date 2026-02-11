@@ -23,6 +23,10 @@ spec:
           persistence:
             enabled: true
             size: 8Gi
+        image:
+          registry: docker.io
+          repository: bitnami/postgresql
+          tag: latest
   destination:
     server: https://kubernetes.default.svc
     namespace: button0
