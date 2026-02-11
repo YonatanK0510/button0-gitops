@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://charts.bitnami.com/bitnami
     chart: postgresql
-    targetRevision: 18.2.6
+    targetRevision: 15.5.20
     helm:
       releaseName: button0-postgresql
       values: |
